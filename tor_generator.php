@@ -18,13 +18,13 @@ for ($i=3; $i < (count($tor_ip)-1); $i++) {
 	$results = $results .= "$tor_ip[$i] \n";
 }
 
-//$results = 	trim($results);
+$results = 	trim($results);
 $results = print_r($results, true);
-$results = str_replace(' ', ' deny', $results);
 
 if(!empty($results)){
+	unlink('blacklist.txt');
 	file_put_contents('blacklist.txt', $results);
-	header('location: ' . $path_url . 'blacklist.txt');
+	echo "Archivo Blacklist Actualizado";
 }
 
 ?>
