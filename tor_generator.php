@@ -25,6 +25,7 @@ if(!empty($results)){
 	unlink('blacklist.txt');
 	file_put_contents('blacklist.txt', $results);
 	echo "Archivo Blacklist Actualizado";
+	echo '<br />';
 }
 
 ?>
