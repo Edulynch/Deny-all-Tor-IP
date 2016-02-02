@@ -31,30 +31,31 @@ $user_ip = getUserIP();
 echo 'Mi ip: ' . $user_ip;
 echo '<br />';
 $contador = 3;
-while($contador < (count($tor_ip)-1)){
+$detener = false;
+while(($contador < (count($tor_ip)-1)) || $detener == true){
 
 if($tor_ip[$contador] == $user_ip){
-
+	echo '<br />';
 	echo "RED TOR DETECTADA";
 	echo '<br />';
 	echo "ACCESO DENEGADO";
-}else{
+    echo '<br />';
+    echo $user_ip;
+
+	$detener = true;
+    die();
+	}else{
+
 	echo $tor_ip[$contador] . " : " . $user_ip;
 	echo '<br />';
 }
 
+	if(($contador == (count($tor_ip)-2)) && $detener == false){
+		echo '<br />';
+		echo "RED TOR NO DETECTADA";
+	}
+
 $contador++;
 
 }
- ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-</head>
-<body>
-	
-</body>
-</html>
+?>
