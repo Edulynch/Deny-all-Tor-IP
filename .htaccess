@@ -1,0 +1,3 @@
+Order Deny,Allow
+include blacklist.txt
+Allow from all
