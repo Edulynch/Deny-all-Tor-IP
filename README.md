@@ -1,6 +1,6 @@
-# CheckTOR Network
+# Deny all Tor IP
 
-Script php, que se actualiza directamente desde los nodos de tor. 
+### Script php, que se actualiza directamente desde los nodos de tor. 
 
 ### Verifica si se esta accediendo, desde una red o no.
 
