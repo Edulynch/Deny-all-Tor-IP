@@ -28,7 +28,7 @@ function getUserIP()
 
 $user_ip = getUserIP();
 
-echo 'Mi ip: ' . $user_ip;
+echo '<b>Mi IP: </b>' . $user_ip;
 echo '<br />';
 $contador = 3;
 $detener = false;
@@ -36,23 +36,19 @@ while(($contador < (count($tor_ip)-1)) || $detener == true){
 
 if($tor_ip[$contador] == $user_ip){
 	echo '<br />';
-	echo "RED TOR DETECTADA";
+	echo '<b>RED TOR DETECTADA</b>';
 	echo '<br />';
-	echo "ACCESO DENEGADO";
+	echo "<b>ACCESO DENEGADO</b>";
     echo '<br />';
     echo $user_ip;
 
 	$detener = true;
     die();
-	}else{
-
-	echo $tor_ip[$contador] . " : " . $user_ip;
-	echo '<br />';
-}
+	}
 
 	if(($contador == (count($tor_ip)-2)) && $detener == false){
 		echo '<br />';
-		echo "RED TOR NO DETECTADA";
+		echo "<b>RED TOR NO DETECTADA</b>";
 	}
 
 $contador++;
